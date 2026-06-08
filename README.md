@@ -70,6 +70,7 @@ AI-Resume-Parser
 ├── reports.py
 ├── skills.py
 ├── requirements.txt
+├── README.md
 │
 ├── screenshots
 │   ├── menu.png
@@ -110,14 +111,14 @@ MySQL Storage
 
 ## Installation
 
-Clone the repository:
+### Clone Repository
 
 ```bash
 git clone https://github.com/parthh001/AI-Resume-Parser.git
 cd AI-Resume-Parser
 ```
 
-Install dependencies:
+### Install Dependencies
 
 ```bash
 pip3 install -r requirements.txt
@@ -127,29 +128,31 @@ pip3 install -r requirements.txt
 
 ## Database Setup
 
-Create the database:
+Create a MySQL database:
 
 ```sql
 CREATE DATABASE ats_resume_db;
 USE ats_resume_db;
 ```
 
-Execute:
+Run the schema file located in:
 
 ```text
 sql/schema.sql
 ```
 
-Update database credentials inside:
+Configure database credentials inside:
 
 ```text
 database.py
 ```
 
+Example:
+
 ```python
-host="127.0.0.1"
-user="root"
-password="password"
+host="localhost"
+user="your_mysql_username"
+password="your_mysql_password"
 database="ats_resume_db"
 ```
 
@@ -161,7 +164,7 @@ database="ats_resume_db"
 python3 main.py
 ```
 
-Available options:
+### Menu Options
 
 ```text
 1. New Analysis
@@ -197,18 +200,20 @@ Missing Skills:
 - aws
 ```
 
+Results are automatically stored in the MySQL database.
+
 ---
 
 ## Database Storage
 
-Each analysis is stored with:
+The application stores:
 
-- Resume ID
+- Resume Information
 - ATS Score
 - Missing Skills
-- Timestamp
+- Analysis Timestamp
 
-This allows users to review previous analyses using the History feature.
+This enables users to review previous analyses through the History menu.
 
 ---
 
@@ -234,6 +239,17 @@ MongoDB
 
 ---
 
+## Sample Use Case
+
+1. Upload a Resume PDF.
+2. Enter a target Job Description.
+3. Receive an ATS Compatibility Score.
+4. View Missing Skills.
+5. Store Results in MySQL.
+6. Access Historical Analyses.
+
+---
+
 ## Future Roadmap
 
 ### Version 2
@@ -255,7 +271,7 @@ MongoDB
 
 ## Repository
 
-GitHub:
+GitHub Repository:
 
 https://github.com/parthh001/AI-Resume-Parser
 
