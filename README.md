@@ -1,99 +1,40 @@
 # AI Resume Parser & ATS Analyzer
 
-An AI-powered Resume Parser and ATS (Applicant Tracking System) Analyzer built using Python and MySQL.
-
-This project allows users to upload a resume PDF, compare it against a job description, calculate an ATS score, identify missing skills, and store analysis history in a MySQL database.
+A Python-based ATS (Applicant Tracking System) Resume Analyzer that parses PDF resumes, compares them against job descriptions, calculates ATS compatibility scores, identifies missing skills, and stores analysis history in MySQL.
 
 ---
 
-## Features
+## Overview
 
-✅ Resume PDF Text Extraction
+This project simulates a simplified Applicant Tracking System used by recruiters to evaluate resumes against job requirements.
 
-✅ ATS Score Calculation
-
-✅ Missing Skill Detection
-
-✅ MySQL Database Integration
-
-✅ Analysis History Tracking
-
-✅ Professional CLI Menu
-
-✅ Resume Analysis Storage
-
-✅ Job Description Matching
+The system extracts text from PDF resumes, matches candidate skills against job descriptions, calculates an ATS score, identifies skill gaps, and stores all analyses in a MySQL database for future reference.
 
 ---
 
-## Tech Stack
+## Key Features
 
-- Python
-- MySQL
-- MySQL Connector
-- PyPDF2
-- Pandas
-- Tabulate
-
----
-
-## Project Structure
-
-```text
-AI-Resume-Parser/
-│
-├── main.py
-├── database.py
-├── resume_parser.py
-├── ats_engine.py
-├── reports.py
-├── skills.py
-├── requirements.txt
-├── README.md
-│
-├── screenshots/
-│   ├── menu.png
-│   ├── ats_result.png
-│   └── history.png
-│
-└── sql/
-    └── schema.sql
-```
+- PDF Resume Parsing
+- ATS Score Calculation
+- Skill Gap Detection
+- Job Description Matching
+- Analysis History Tracking
+- MySQL Database Integration
+- Command Line Interface
+- Persistent Analysis Storage
 
 ---
 
-## How It Works
+## Technology Stack
 
-### Step 1
-
-User uploads a Resume PDF.
-
-### Step 2
-
-The system extracts resume text using PDF parsing.
-
-### Step 3
-
-User enters a Job Description.
-
-### Step 4
-
-The ATS Engine compares resume skills with job requirements.
-
-### Step 5
-
-The system calculates:
-
-- ATS Score
-- Missing Skills
-
-### Step 6
-
-Analysis results are stored in MySQL.
-
-### Step 7
-
-Users can view previous analyses through the History Menu.
+| Category | Technology |
+|-----------|------------|
+| Language | Python |
+| Database | MySQL |
+| PDF Processing | PyPDF2 |
+| Data Handling | Pandas |
+| Database Connector | mysql-connector-python |
+| Output Formatting | Tabulate |
 
 ---
 
@@ -105,9 +46,9 @@ Users can view previous analyses through the History Menu.
 
 ---
 
-### ATS Analysis Result
+### ATS Analysis
 
-![ATS Result](screenshots/ats_result.png)
+![ATS Analysis](screenshots/ats_result.png)
 
 ---
 
@@ -117,21 +58,66 @@ Users can view previous analyses through the History Menu.
 
 ---
 
-## Installation
+## Project Structure
 
-### Clone Repository
-
-```bash
-git clone https://github.com/parthh001/AI-Resume-Parser.git
-```
-
-```bash
-cd AI-Resume-Parser
+```text
+AI-Resume-Parser
+│
+├── main.py
+├── resume_parser.py
+├── ats_engine.py
+├── database.py
+├── reports.py
+├── skills.py
+├── requirements.txt
+│
+├── screenshots
+│   ├── menu.png
+│   ├── ats_result.png
+│   └── history.png
+│
+└── sql
+    └── schema.sql
 ```
 
 ---
 
-### Install Dependencies
+## ATS Workflow
+
+```text
+Resume PDF
+     │
+     ▼
+Text Extraction
+     │
+     ▼
+Skill Identification
+     │
+     ▼
+Job Description Matching
+     │
+     ▼
+ATS Score Generation
+     │
+     ▼
+Missing Skills Detection
+     │
+     ▼
+MySQL Storage
+```
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/parthh001/AI-Resume-Parser.git
+cd AI-Resume-Parser
+```
+
+Install dependencies:
 
 ```bash
 pip3 install -r requirements.txt
@@ -139,32 +125,26 @@ pip3 install -r requirements.txt
 
 ---
 
-### Setup MySQL Database
+## Database Setup
 
-Open MySQL Workbench and execute:
+Create the database:
 
 ```sql
 CREATE DATABASE ats_resume_db;
 USE ats_resume_db;
 ```
 
-Then run the SQL schema file located inside:
+Execute:
 
 ```text
 sql/schema.sql
 ```
 
----
-
-### Configure Database Connection
-
-Open:
+Update database credentials inside:
 
 ```text
 database.py
 ```
-
-Update credentials if necessary:
 
 ```python
 host="127.0.0.1"
@@ -175,15 +155,13 @@ database="ats_resume_db"
 
 ---
 
-## Usage
-
-Run the application:
+## Running the Application
 
 ```bash
 python3 main.py
 ```
 
-Menu:
+Available options:
 
 ```text
 1. New Analysis
@@ -193,29 +171,23 @@ Menu:
 
 ---
 
-### New Analysis Flow
+## Example Analysis
 
-Enter Resume PDF Path:
-
-```text
-sample_resume_ai_parser.pdf
-```
-
-Enter Job Description:
+### Job Description
 
 ```text
 Python Developer
 
-Skills Required:
+Required Skills:
 Python
 SQL
 Machine Learning
-Git
 Docker
+Git
 AWS
 ```
 
-Output:
+### Output
 
 ```text
 ATS Score: 70.71%
@@ -225,66 +197,67 @@ Missing Skills:
 - aws
 ```
 
-Results are automatically stored in MySQL.
-
 ---
 
-## Database Schema
+## Database Storage
 
-### resumes
+Each analysis is stored with:
 
-Stores uploaded resumes.
-
-### analyses
-
-Stores:
-
+- Resume ID
 - ATS Score
 - Missing Skills
-- Analysis Date
+- Timestamp
+
+This allows users to review previous analyses using the History feature.
 
 ---
 
-## Example Skills Dataset
+## Current Skill Library
 
-Current skill matching includes:
-
-- Python
-- SQL
-- Java
-- C++
-- Machine Learning
-- Deep Learning
-- AWS
-- Docker
-- Kubernetes
-- Git
-- TensorFlow
-- PyTorch
-- Flask
-- Django
-- MongoDB
+```text
+Python
+SQL
+Java
+C++
+Machine Learning
+Deep Learning
+AWS
+Docker
+Kubernetes
+Git
+TensorFlow
+PyTorch
+Flask
+Django
+MongoDB
+```
 
 ---
 
-## Future Improvements
+## Future Roadmap
 
 ### Version 2
 
 - Streamlit Web Interface
-- Drag & Drop Resume Upload
-- Better ATS Matching Algorithm
-- Resume Ranking
-- Resume Recommendations
-- Skill Visualization Charts
-- Export Analysis to PDF
+- Drag-and-Drop Resume Upload
+- ATS Score Visualizations
+- Resume Ranking System
+- Export Reports to PDF
 
 ### Version 3
 
-- AI Resume Suggestions
-- GPT-Based Resume Feedback
+- AI Resume Recommendations
+- GPT-Based Resume Review
 - Multiple Resume Comparison
 - Job Recommendation Engine
+
+---
+
+## Repository
+
+GitHub:
+
+https://github.com/parthh001/AI-Resume-Parser
 
 ---
 
@@ -292,11 +265,8 @@ Current skill matching includes:
 
 Parth Patil
 
-GitHub:
-https://github.com/parthh001
-
 ---
 
 ## License
 
-This project is developed for educational and portfolio purposes.
+This project is intended for educational, learning, and portfolio purposes.
