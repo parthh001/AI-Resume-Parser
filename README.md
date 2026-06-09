@@ -1,5 +1,5 @@
 # AI Resume Parser & ATS Analyzer
---
+---
 
 A Python-based ATS (Applicant Tracking System) Resume Analyzer that parses PDF resumes, compares them against job descriptions, calculates ATS compatibility scores, identifies missing skills, and stores analysis history in MySQL.
 
