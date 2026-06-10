@@ -1,3 +1,6 @@
+![python](https://github.com/user-attachments/assets/22ab9a9b-0819-4c0f-b5c8-1b7055ea89fd)
+
+---
 # AI Resume Parser & ATS Analyzer
 ---
 
