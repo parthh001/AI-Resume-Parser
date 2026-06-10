@@ -1,5 +1,4 @@
-<img width="1584" height="396" alt="GITHUB parth" src="https://github.com/user-attachments/assets/77d61716-985f-4a88-bee1-b15113dbcfe1" />
-![python](https://github.com/user-attachments/assets/a92961e5-6c6c-4761-9589-1b31c127d405)
+<img width="1584" height="396" alt="resumeparser" src="https://github.com/user-attachments/assets/a245ed43-dfa9-49c4-ba04-a1d97f8dc441" />
 
 ---
 # AI Resume Parser & ATS Analyzer
