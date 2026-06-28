@@ -8,7 +8,7 @@ A Python-based ATS (Applicant Tracking System) Resume Analyzer that parses PDF r
 
 ---
 
-## Overvieww
+## Overview
 
 This project simulates a simplified Applicant Tracking System used by recruiters to evaluate resumes against job requirements.
 
